@@ -77,7 +77,7 @@ Word* findInChain(vector<Word>* v, string word) {
 	return NULL;
 }
 
-int main(){
+int main(int ac, char** av){
 
 	srand(unsigned(time(0)));
 
@@ -93,7 +93,7 @@ int main(){
 
 
 	// read input file and evaluate each word 
-	ifstream myfile ("input.txt");
+	ifstream myfile (av[1]);
 	if(myfile.is_open())
 	{
 		while( myfile >> word ) 
@@ -155,7 +155,7 @@ int main(){
 
 	// trace words and add to buffer
 	Word* currentWord = findInChain(&wordChain, temp);
-	while(strcmp(currentWord->getWord().c_str(), ".") != 0 && (result.size() < TWEETSIZE || currentWord->mapSize() != 0)) {
+	while(strcmp(currentWord->getWord().c_str(), ".") != 0 && (result.size() < TWEETSIZE && currentWord->mapSize() != 0)) {
 		result += currentWord->getWord();
 		result += " ";
 		currentWord = currentWord->getRandNext();
