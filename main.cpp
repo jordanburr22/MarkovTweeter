@@ -100,10 +100,6 @@ int main(int ac, char** av){
 		{ 
 			bool isPeriod = false;
 
-			// make all words lowercase
-			transform(word.begin(), word.end(), word.begin(), ::tolower);
-		
-
 			// check if a period is in the word, then add to words
 			if( word[word.size() - 1] == '.') {
 				isPeriod = true;
