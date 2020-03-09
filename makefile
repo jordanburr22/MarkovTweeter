@@ -1,4 +1,4 @@
-const: all
+us: all
 	./main US_constitution.txt
 
 northkorea: all
